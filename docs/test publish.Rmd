@@ -1,0 +1,30 @@
+---
+title: "test publish"
+author: "Nabeel Hassan (500773039)"
+date: "2026-09-14"
+output: html_document
+---
+## Project Overview
+This project extracts store database entries using SQL and transforms them using Python to predict customer churn.
+
+## 1. Data Extraction (SQL)
+```{sql}
+--| connection: your_database_connection
+--| eval: false
+SELECT customer_id, order_total, join_date 
+FROM customer_sales 
+WHERE join_date >= '2025-01-01';
+```
+
+## 2. Data Processing (Python)
+```{python}
+import pandas as pd
+
+# Load and look at data structure
+df = pd.DataFrame({
+    'customer_id': [101, 102, 103],
+    'order_total': [150.50, 23.00, 542.10]
+})
+print(df.describe())
+```
+---
